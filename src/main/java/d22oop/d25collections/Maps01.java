@@ -1,4 +1,4 @@
-package d25collections;
+package d22oop.d25collections;
 
 import java.util.Collection;
 import java.util.HashMap;
