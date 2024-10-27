@@ -6,7 +6,7 @@ public class WrapperClass {
     public static void main(String[] args) {
 
 
-                /*Java primitive data tiplerine yeni ozellikler(methodlar) ekleyerek yeni bir yapi olusturdu.
+    /*Java primitive data tiplerine yeni ozellikler(methodlar) ekleyerek yeni bir yapi olusturdu.
         Bu yapiya wrapper class denir.
 
          Wrapper class'lar, Java'nın primitive veri türlerini object olarak

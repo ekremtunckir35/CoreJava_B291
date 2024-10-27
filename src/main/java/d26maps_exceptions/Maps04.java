@@ -1,9 +1,6 @@
 package d26maps_exceptions;
 
-import java.util.HashMap;
-import java.util.Hashtable;
-import java.util.Map;
-import java.util.TreeMap;
+import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 
 public class Maps04 {
@@ -115,5 +112,44 @@ HashTable'dan daha hızlıdır çünkü segment-based locking kullanır.
 
         System.out.println(countryPopulation);
 
+
+        //------------------------------------------------------/*LinkedHashMap, HashMap'e benzer, ancak ekleme sırasına göre sıralanmış bir şekilde verileri tutar.
+        //Yani, LinkedHashMap verileri eklediğiniz sırayla tutar ve bu sırayı korur.
+        //Bu nedenle, verileri eklediğiniz sırayla geri almanız gerektiğinde kullanışlı olabilir.
+        //
+        //**ornegin,bir takvim uygulamasında, etkinlikleri tarih sırasına göre tutmak için kullanılabilir.
+        //yada bir restoranın sipariş alım sistemi düşünün. Müşterilerin siparişlerini verme sırası,
+        //restoranın sipariş hazırlama sırasını belirler.
+        //
+        //Aynı mantık, müşteri hizmetleri çağrı merkezleri, sırayla hizmet veren işletmeler veya
+        //benzeri senaryolarda da kullanılabilir.
+        //Müşteri veya işlem sıralarını takip etmek için LinkedHashMap tercih edilebilir.LinkedHashMap sınıfı thread-safe degildir
+        //*/
+
+
+        LinkedHashMap<String, Integer> lhm = new LinkedHashMap<>();
+
+        lhm.put("Ali", 25);
+        lhm.put("Can", 18);
+        lhm.put("Mehmet", 30);
+
+        for (Map.Entry<String, Integer> entry : lhm.entrySet()) {
+            System.out.println(entry.getKey() + " --> " + entry.getValue());
+        }
+//HashMap arka planda nasil calisiyor?
+//HashMap'in varsayılan boyutu(kapasitesi) 16'dır (0 ila 15).16 adet "bucket" (kova) bulunacağı anlamına gelir.
+// Bu "bucket"lar, HashMap içindeki anahtar-değer çiftlerini tutar. Bucket'in memory'de kapsadigi alan degiskendir.
+
+       HashMap<String,String >capitals = new HashMap<>();
+       capitals.put("USA","Washington");
+       capitals.get("USA");
+       capitals.put("Italy","Roma");
+       capitals.put("Turkiye","Ankara");
+       capitals.get("Turkiye");
+       capitals.put("Turkiye","Istanbul");
+
     }
+
+
+
 }
